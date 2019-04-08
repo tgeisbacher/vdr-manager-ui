@@ -5,8 +5,8 @@ class Home extends Component {
     return (
       <div>
         <h1>VDR Manager</h1>
-        <p>Willkommen im VDR-Manager. Das ist ein Portal um Sender zu suchen, Sendungen aufzunehmen.
-          Sie können auch das aktuelle Programm anzeigen indem Sie in der Menüleiste auf EPG klicken.</p>
+        <p>Willkommen im VDR-Manager. Das ist eine Plattform um Sender zu suchen oder aufzunehmen. 
+          Weiters kann auch das aktuelle Programm anzeigen werden indem Sie in der Menüleiste auf EPG klicken.</p>
       <p>Created by Thomas Geisbacher</p>
       
       </div>
