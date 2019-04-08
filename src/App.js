@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.css';   
+import Home from './components/Home';
+import Channels from './components/Channels';
+import Recordings from './components/Recordings';
+import EPG from './components/EPG';
 
 class App extends Component {
   constructor(){
     super()
-    this.state = {channels: []}
-  }
-  componentDidMount() {
-    fetch('http://localhost:34973/api/channels')
-    .then(resp => resp.json())
-    .then(data => {
-      console.log({channels:data})
-      return data 
-    })
-    .then(data => this.setState({channels:data}))
   }
   render() {
     return (
+      <BrowserRouter>
         <div>
-          <h1>VDR Manager</h1>
-          <ul>
-            {this.state.channels
-                .filter(channel => channel.Name[0] === 'O')
-                .map(channel => <li key={channel.Position}>{channel.Name}</li>)}
-          </ul>
+          <Switch>
+            <Route path="/" component={Home} exact={true} />
+            <Route path="/channels" component={Channels} />
+            <Route path="/recordings" component={Recordings} />
+            <Route path="/epg" component={EPG} />
+          </Switch>
         </div>
-    );
+      </BrowserRouter>
+    )
   }
+    
 }
+
 
 export default App;
