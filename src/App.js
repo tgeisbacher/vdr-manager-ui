@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import './App.css';   
 import Home from './components/Home';
 import Channels from './components/Channels';
@@ -12,7 +12,7 @@ class App extends Component {
   }
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <Switch>
             <Route path="/" component={Home} exact={true} />
@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/epg" component={EPG} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
     
