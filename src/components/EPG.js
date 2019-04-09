@@ -10,7 +10,7 @@ constructor(){
     this.state = {epgData: [], apiError: null, isLoaded: false}
 }
 componentDidMount(){
-    fetch('http://localhost:34973/api/epg')
+    fetch('/api/epg')
     .then(resp => resp.json())
     .then(apiResp => (apiResp.Data === null) ? 
         this.setState({apiError:apiResp.Error, isLoaded:true}) : 

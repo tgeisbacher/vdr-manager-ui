@@ -9,7 +9,7 @@ class Channels extends Component {
     this.state = {channels: [], apiError: null, searchTerm: null, isLoaded:false}
   }
   componentDidMount() {
-    fetch('http://localhost:34973/api/channels')
+    fetch('/api/channels')
     .then(resp => resp.json())
     .then(apiResp => (apiResp.Data === null) ? 
         this.setState({apiError:apiResp.Error, isLoaded:true}) : 
